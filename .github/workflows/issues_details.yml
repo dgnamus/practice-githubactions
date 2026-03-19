@@ -1,0 +1,13 @@
+name: Issues details
+on:
+    issues:
+        types: [opened]
+jobs:
+    info:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Output issues name
+              run: echo "${{ github.event.issue.title }}"
+            - name: Output issues author
+              run: echo "${{ github.event.issue.user.login }}"
+              
